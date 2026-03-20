@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 # In-process response cache (sentence + target + native â†’ response)
 # ---------------------------------------------------------------------------
 _cache: dict[str, tuple[FeedbackResponse, float]] = {}
-_CACHE_TTL_SECONDS = 3600  # 1 hour
+_CACHE_TTL_SECONDS = 3600  # 1 hour — balances freshness vs. API cost savings
 
 
 def _cache_key(request: FeedbackRequest) -> str:
