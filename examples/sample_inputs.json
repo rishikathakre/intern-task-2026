@@ -1,0 +1,112 @@
+[
+  {
+    "description": "Spanish sentence with conjugation error",
+    "request": {
+      "sentence": "Yo soy fue al mercado ayer.",
+      "target_language": "Spanish",
+      "native_language": "English"
+    },
+    "expected_response": {
+      "corrected_sentence": "Yo fui al mercado ayer.",
+      "is_correct": false,
+      "errors": [
+        {
+          "original": "soy fue",
+          "correction": "fui",
+          "error_type": "conjugation",
+          "explanation": "You mixed two verb forms. 'Soy' is the present tense of 'ser' (to be), and 'fue' is the past tense of 'ir' (to go). Since you're talking about going to the market yesterday, you only need 'fui' (I went)."
+        }
+      ],
+      "difficulty": "A2"
+    }
+  },
+  {
+    "description": "French sentence with gender agreement error",
+    "request": {
+      "sentence": "La chat noir est sur le table.",
+      "target_language": "French",
+      "native_language": "English"
+    },
+    "expected_response": {
+      "corrected_sentence": "Le chat noir est sur la table.",
+      "is_correct": false,
+      "errors": [
+        {
+          "original": "La chat",
+          "correction": "Le chat",
+          "error_type": "gender_agreement",
+          "explanation": "'Chat' (cat) is masculine in French, so it takes the masculine article 'le', not the feminine 'la'."
+        },
+        {
+          "original": "le table",
+          "correction": "la table",
+          "error_type": "gender_agreement",
+          "explanation": "'Table' is feminine in French, so it takes the feminine article 'la', not the masculine 'le'."
+        }
+      ],
+      "difficulty": "A1"
+    }
+  },
+  {
+    "description": "Japanese sentence with particle error",
+    "request": {
+      "sentence": "私は東京を住んでいます。",
+      "target_language": "Japanese",
+      "native_language": "English"
+    },
+    "expected_response": {
+      "corrected_sentence": "私は東京に住んでいます。",
+      "is_correct": false,
+      "errors": [
+        {
+          "original": "を",
+          "correction": "に",
+          "error_type": "grammar",
+          "explanation": "The verb 住む (to live) takes the particle に to indicate location of residence, not を. Think of に as marking where you exist/live."
+        }
+      ],
+      "difficulty": "A2"
+    }
+  },
+  {
+    "description": "Correct German sentence -- no errors",
+    "request": {
+      "sentence": "Ich habe gestern einen interessanten Film gesehen.",
+      "target_language": "German",
+      "native_language": "English"
+    },
+    "expected_response": {
+      "corrected_sentence": "Ich habe gestern einen interessanten Film gesehen.",
+      "is_correct": true,
+      "errors": [],
+      "difficulty": "B1"
+    }
+  },
+  {
+    "description": "Portuguese sentence with spelling and word choice errors",
+    "request": {
+      "sentence": "Eu quero comprar um prezente para minha irmã, mas não sei o que ela gosta.",
+      "target_language": "Portuguese",
+      "native_language": "English"
+    },
+    "expected_response": {
+      "corrected_sentence": "Eu quero comprar um presente para minha irmã, mas não sei do que ela gosta.",
+      "is_correct": false,
+      "errors": [
+        {
+          "original": "prezente",
+          "correction": "presente",
+          "error_type": "spelling",
+          "explanation": "'Present/gift' in Portuguese is spelled 'presente' with an 's', not a 'z'."
+        },
+        {
+          "original": "o que ela gosta",
+          "correction": "do que ela gosta",
+          "error_type": "grammar",
+          "explanation": "The verb 'gostar' (to like) requires the preposition 'de'. So 'what she likes' is 'do que ela gosta' (de + o que)."
+        }
+      ],
+      "difficulty": "B1"
+    }
+  }
+]

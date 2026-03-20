@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FeedbackResponse",
+  "description": "Response body from the /feedback endpoint",
+  "type": "object",
+  "required": ["corrected_sentence", "is_correct", "errors", "difficulty"],
+  "properties": {
+    "corrected_sentence": {
+      "type": "string",
+      "description": "The grammatically corrected version of the input sentence. If the input was already correct, this should be identical to the input sentence."
+    },
+    "is_correct": {
+      "type": "boolean",
+      "description": "true if the original sentence had no errors, false otherwise"
+    },
+    "errors": {
+      "type": "array",
+      "description": "List of errors found in the sentence. Empty array if the sentence is correct.",
+      "items": {
+        "type": "object",
+        "required": ["original", "correction", "error_type", "explanation"],
+        "properties": {
+          "original": {
+            "type": "string",
+            "description": "The erroneous word or phrase from the original sentence"
+          },
+          "correction": {
+            "type": "string",
+            "description": "The corrected word or phrase"
+          },
+          "error_type": {
+            "type": "string",
+            "enum": [
+              "grammar",
+              "spelling",
+              "word_choice",
+              "punctuation",
+              "word_order",
+              "missing_word",
+              "extra_word",
+              "conjugation",
+              "gender_agreement",
+              "number_agreement",
+              "tone_register",
+              "other"
+            ],
+            "description": "Category of the error"
+          },
+          "explanation": {
+            "type": "string",
+            "description": "A brief, learner-friendly explanation of the error, written in the native language"
+          }
+        }
+      }
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": ["A1", "A2", "B1", "B2", "C1", "C2"],
+      "description": "CEFR difficulty level of the sentence"
+    }
+  }
+}
