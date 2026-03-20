@@ -178,3 +178,5 @@ If this were shipping at Pangea Chat's scale, the next iterations would be:
 - **Rate limiting** — Per-user request quotas to prevent abuse
 - **Observability** — Structured logging with request IDs, latency histograms, cache hit rate metrics
 - **Fallback model** — If GPT-4o-mini is down, fall back to GPT-3.5-turbo for continuity
+
+<!-- Language Feedback API -->
