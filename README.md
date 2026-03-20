@@ -1,6 +1,6 @@
 # Language Feedback API
 
-An LLM-powered language feedback API that analyzes learner-written sentences and returns structured correction feedback. Built for [Pangea Chat](https://pangea.chat) — an NSF-funded language learning platform.
+An LLM-powered language feedback API that analyzes learner-written sentences and returns structured correction feedback. Works on many Languages including Latin and Non-Latin Script because learning should never stop! Built for [Pangea Chat](https://pangea.chat) — an NSF-funded language learning platform.
 
 ---
 
